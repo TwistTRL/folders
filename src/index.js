@@ -6,6 +6,8 @@ import Folders from "./lib";
 class App extends Component {
     constructor(props) {
         super(props);
+
+        this.state = { width: 300, height: 400, }
     }
 
     render() {
@@ -44,13 +46,16 @@ class App extends Component {
             },
         ]
         return (
-            <div className="wrap" style={{width: "300px", height: "400px"}}>
-                <Folders
-                    width={300}
-                    heightString={"400px"}
-                    className="fluids-folder"
-                    folders={fluidsFolders} />
-            </div>
+            <>
+                <button type="button">Click Me!</button>
+                <div className="wrap" style={{ width: "300px", height: "400px" }}>
+                    <Folders
+                        width={300}
+                        heightString={"400px"}
+                        className="fluids-folder"
+                        folders={fluidsFolders} />
+                </div>
+            </>
         )
     }
 }
