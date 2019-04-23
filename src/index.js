@@ -6,8 +6,17 @@ import Folders from "./lib";
 class App extends Component {
     constructor(props) {
         super(props);
-
         this.state = { width: 300, height: 400, }
+    }
+
+    handleSubmit = (e) => {
+        if (e) e.preventDefault();
+        const width = this.width.value;
+        let height = this.height.value
+        this.setState({
+            width: Number(width),
+            height: Number(height)
+        })
     }
 
     render() {
@@ -47,11 +56,15 @@ class App extends Component {
         ]
         return (
             <>
-                <button type="button">Click Me!</button>
-                <div className="wrap" style={{ width: "300px", height: "400px" }}>
+                <form onSubmit={this.handleSubmit}>
+                    <input placeholder="width" type="text" ref={(element) => { this.width = element }} />
+                    <input placeholder="height" type="text" ref={(element) => { this.height = element }} />
+                    <button>Submit!</button>
+                </form>
+                <div className="wrap" style={{ width: this.state.width + "px", height: this.state.height + "px" }}>
                     <Folders
-                        width={300}
-                        heightString={"400px"}
+                        width={this.state.width}
+                        heightString={this.state.height + "px"}
                         className="fluids-folder"
                         folders={fluidsFolders} />
                 </div>
