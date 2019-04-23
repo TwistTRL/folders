@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Folders from "./lib";
@@ -44,11 +44,13 @@ class App extends Component {
             },
         ]
         return (
-            <Folders
-                width={this.props.width}
-                heightString={this.props.heightString}
-                className="fluids-folder"
-                folders={fluidsFolders} />
+            <div className="wrap" style={{width: "300", height: "400"}}>
+                <Folders
+                    width={300}
+                    heightString={"400px"}
+                    className="fluids-folder"
+                    folders={fluidsFolders} />
+            </div>
         )
     }
 }
