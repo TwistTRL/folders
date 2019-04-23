@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-folders/static/css/main.c3499800.chunk.css",
-    "main.js": "/react-folders/static/js/main.3a1fd63b.chunk.js",
-    "main.js.map": "/react-folders/static/js/main.3a1fd63b.chunk.js.map",
+    "main.js": "/react-folders/static/js/main.f3c8da3e.chunk.js",
+    "main.js.map": "/react-folders/static/js/main.f3c8da3e.chunk.js.map",
     "runtime~main.js": "/react-folders/static/js/runtime~main.1559b8c0.js",
     "runtime~main.js.map": "/react-folders/static/js/runtime~main.1559b8c0.js.map",
     "static/css/2.5c17b9f1.chunk.css": "/react-folders/static/css/2.5c17b9f1.chunk.css",
     "static/js/2.4d06ef49.chunk.js": "/react-folders/static/js/2.4d06ef49.chunk.js",
     "static/js/2.4d06ef49.chunk.js.map": "/react-folders/static/js/2.4d06ef49.chunk.js.map",
     "index.html": "/react-folders/index.html",
-    "precache-manifest.602ea6b16c60c0730203facf4b6cee21.js": "/react-folders/precache-manifest.602ea6b16c60c0730203facf4b6cee21.js",
+    "precache-manifest.ed35b2d0800b8cb95f8de7a5999e4556.js": "/react-folders/precache-manifest.ed35b2d0800b8cb95f8de7a5999e4556.js",
     "service-worker.js": "/react-folders/service-worker.js",
     "static/css/2.5c17b9f1.chunk.css.map": "/react-folders/static/css/2.5c17b9f1.chunk.css.map",
     "static/css/main.c3499800.chunk.css.map": "/react-folders/static/css/main.c3499800.chunk.css.map"
