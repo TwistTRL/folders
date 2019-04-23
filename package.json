@@ -44,6 +44,10 @@
     "babel-preset-stage-0": "^6.24.1",
     "gh-pages": "^2.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twisttrl/react-folders.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "babel": {
