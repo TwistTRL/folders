@@ -1,0 +1,77 @@
+.fluids-folder, .cardiac-folder {
+    background-color: #fff6e5;
+    border-radius: 25px 25px 5px 5px;
+    box-shadow: 0px 2px 2px lightgrey;
+    margin-top: 15px;
+}
+
+.xray-folder {
+    background-position: center;
+    height: inherit;
+    border-radius: 5px;
+}
+
+.xray {
+    margin-top: 15px;
+}
+
+.xray-img-container {
+    width: 390px;
+    margin: auto;
+    text-align: center;
+    line-height: 309px;
+    cursor: zoom-in;
+}
+
+.xray-img {
+    width: 70%;
+    height: auto;
+    border-radius: inherit;
+}
+
+.side-tab {
+    cursor: pointer;
+    list-style: none;
+    border-radius: 15px 15px 0 0;
+    display: inline-block;
+    position: relative;
+    /* width: 132.7px; */
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: -1px 0 rgba(0, 0, 0, 0.556), 0 1px rgba(0, 0, 0, 0.556), 1px 0 rgba(0, 0, 0, 0.556), 0 -1px rgba(0, 0, 0, 0.556);
+    box-shadow: 6px 5px 5px -4px rgba(0, 0, 0, 0.164);
+}
+
+.react-tabs__tab-list {
+    position: relative;
+    padding: 0;
+    margin: 0 0 0 0px !important;
+    border-bottom: none !important;
+    box-shadow: inset 0px -6px 5px -4px rgba(0, 0, 0, 0.164);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.react-tabs__tab-list::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    top: 91.5%;
+    box-shadow: inset 2px -5px 5px -4px rgba(0, 0, 0, 0.164);
+    z-index: 9;
+}
+
+.react-tabs__tab--selected {
+    border-radius: 15px 15px 0 0 !important;
+    z-index: 10 !important;
+    box-shadow: 0px 6px 6px 3px rgba(0, 0, 0, 0.205);
+}
+
+.react-tabs__tab-panel {
+    box-shadow: 0px 2px 2px lightgrey;
+    border-radius: 0px 0px 5px 5px;
+}
