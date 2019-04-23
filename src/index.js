@@ -44,7 +44,7 @@ class App extends Component {
             },
         ]
         return (
-            <div className="wrap" style={{width: "300", height: "400"}}>
+            <div className="wrap" style={{width: "300px", height: "400px"}}>
                 <Folders
                     width={300}
                     heightString={"400px"}
