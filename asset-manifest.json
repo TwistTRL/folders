@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/react-folders/static/css/main.c3499800.chunk.css",
-    "main.js": "/react-folders/static/js/main.dab178fa.chunk.js",
-    "main.js.map": "/react-folders/static/js/main.dab178fa.chunk.js.map",
-    "runtime~main.js": "/react-folders/static/js/runtime~main.1559b8c0.js",
-    "runtime~main.js.map": "/react-folders/static/js/runtime~main.1559b8c0.js.map",
+    "main.css": "/react-folders/static/css/main.a757d747.chunk.css",
+    "main.js": "/react-folders/static/js/main.60eaa2e4.chunk.js",
+    "main.js.map": "/react-folders/static/js/main.60eaa2e4.chunk.js.map",
+    "runtime-main.js": "/react-folders/static/js/runtime-main.23ade559.js",
+    "runtime-main.js.map": "/react-folders/static/js/runtime-main.23ade559.js.map",
     "static/css/2.5c17b9f1.chunk.css": "/react-folders/static/css/2.5c17b9f1.chunk.css",
-    "static/js/2.4d06ef49.chunk.js": "/react-folders/static/js/2.4d06ef49.chunk.js",
-    "static/js/2.4d06ef49.chunk.js.map": "/react-folders/static/js/2.4d06ef49.chunk.js.map",
+    "static/js/2.be81aca3.chunk.js": "/react-folders/static/js/2.be81aca3.chunk.js",
+    "static/js/2.be81aca3.chunk.js.map": "/react-folders/static/js/2.be81aca3.chunk.js.map",
     "index.html": "/react-folders/index.html",
-    "precache-manifest.5abf04884823ce59ef3123068fc141f5.js": "/react-folders/precache-manifest.5abf04884823ce59ef3123068fc141f5.js",
+    "precache-manifest.dc769289228361ebe5f995ecf2ab2f75.js": "/react-folders/precache-manifest.dc769289228361ebe5f995ecf2ab2f75.js",
     "service-worker.js": "/react-folders/service-worker.js",
     "static/css/2.5c17b9f1.chunk.css.map": "/react-folders/static/css/2.5c17b9f1.chunk.css.map",
-    "static/css/main.c3499800.chunk.css.map": "/react-folders/static/css/main.c3499800.chunk.css.map"
-  }
+    "static/css/main.a757d747.chunk.css.map": "/react-folders/static/css/main.a757d747.chunk.css.map",
+    "static/js/2.be81aca3.chunk.js.LICENSE.txt": "/react-folders/static/js/2.be81aca3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23ade559.js",
+    "static/css/2.5c17b9f1.chunk.css",
+    "static/js/2.be81aca3.chunk.js",
+    "static/css/main.a757d747.chunk.css",
+    "static/js/main.60eaa2e4.chunk.js"
+  ]
 }
