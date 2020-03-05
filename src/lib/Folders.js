@@ -5,7 +5,14 @@ import "./Folders.css";
 
 class Folders extends PureComponent {
   render() {
-    const { folders, className, width, height, folderContentWidth, folderContentHeight} = this.props;
+    const {
+      folders,
+      className,
+      width,
+      height,
+      folderContentWidth,
+      folderContentHeight
+    } = this.props;
     const foldersLen = folders.length;
     const tabW = (width + (foldersLen - 1) * 10) / foldersLen;
     const styles = {
@@ -37,8 +44,16 @@ class Folders extends PureComponent {
             height: height
           }}
         >
-          <div className={className} style={styles.tabPanel(folders[0])}>
-            {folders[0].component}
+          <div
+            className="folder-content-container"
+            style={{
+              width: folderContentWidth ? folderContentWidth : width,
+              height: folderContentHeight ? folderContentHeight : height
+            }}
+          >
+            <div className={className} style={styles.tabPanel(folders[0])}>
+              {folders[0].component}
+            </div>
           </div>
         </div>
       );

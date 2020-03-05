@@ -78,8 +78,18 @@ var Folders = function (_PureComponent) {
           },
           _react2.default.createElement(
             "div",
-            { className: className, style: styles.tabPanel(folders[0]) },
-            folders[0].component
+            {
+              className: "folder-content-container",
+              style: {
+                width: folderContentWidth ? folderContentWidth : width,
+                height: folderContentHeight ? folderContentHeight : height
+              }
+            },
+            _react2.default.createElement(
+              "div",
+              { className: className, style: styles.tabPanel(folders[0]) },
+              folders[0].component
+            )
           )
         );
       }
