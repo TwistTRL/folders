@@ -37,10 +37,12 @@ var Folders = function (_PureComponent) {
     key: "render",
     value: function render() {
       var _props = this.props,
+          folders = _props.folders,
+          className = _props.className,
           width = _props.width,
           height = _props.height,
-          folders = _props.folders,
-          className = _props.className;
+          folderContentWidth = _props.folderContentWidth,
+          folderContentHeight = _props.folderContentHeight;
 
       var foldersLen = folders.length;
       var tabW = (width + (foldersLen - 1) * 10) / foldersLen;
@@ -76,10 +78,7 @@ var Folders = function (_PureComponent) {
           },
           _react2.default.createElement(
             "div",
-            {
-              className: className,
-              style: styles.tabPanel(folders[0])
-            },
+            { className: className, style: styles.tabPanel(folders[0]) },
             folders[0].component
           )
         );
@@ -95,31 +94,41 @@ var Folders = function (_PureComponent) {
           }
         },
         _react2.default.createElement(
-          _reactTabs.Tabs,
-          { className: className, style: styles.tabs },
+          "div",
+          {
+            className: "folder-content-container",
+            style: {
+              width: folderContentWidth ? folderContentWidth : width,
+              height: folderContentHeight ? folderContentHeight : height
+            }
+          },
           _react2.default.createElement(
-            _reactTabs.TabList,
-            null,
-            folders.map(function (folder, i) {
+            _reactTabs.Tabs,
+            { className: className, style: styles.tabs },
+            _react2.default.createElement(
+              _reactTabs.TabList,
+              null,
+              folders.map(function (folder, i) {
+                return _react2.default.createElement(
+                  _reactTabs.Tab,
+                  {
+                    key: folder.name,
+                    style: styles.tab(folder, i),
+                    className: "side-tab tab1"
+                  },
+                  " ",
+                  folder.name
+                );
+              })
+            ),
+            folders.map(function (folder) {
               return _react2.default.createElement(
-                _reactTabs.Tab,
-                {
-                  key: folder.name,
-                  style: styles.tab(folder, i),
-                  className: "side-tab tab1"
-                },
-                " ",
-                folder.name
+                _reactTabs.TabPanel,
+                { key: folder.name, style: styles.tabPanel(folder) },
+                folder.component
               );
             })
-          ),
-          folders.map(function (folder) {
-            return _react2.default.createElement(
-              _reactTabs.TabPanel,
-              { key: folder.name, style: styles.tabPanel(folder) },
-              folder.component
-            );
-          })
+          )
         )
       );
     }

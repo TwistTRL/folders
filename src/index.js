@@ -108,6 +108,8 @@ class App extends Component {
         <Folders
           width={this.state.width}
           height={this.state.height}
+          folderContentWidth={this.state.width}
+          folderContentHeight={this.state.height}
           className="fluids-folder"
           folders={fluidsFolders}
         />
