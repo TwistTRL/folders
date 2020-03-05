@@ -81,7 +81,7 @@ var Folders = function (_PureComponent) {
             {
               className: "folder-content-container",
               style: {
-                width: folderContentWidth ? folderContentWidth : width,
+                maxWidth: folderContentWidth ? folderContentWidth : width,
                 height: folderContentHeight ? folderContentHeight : height
               }
             },
@@ -108,7 +108,7 @@ var Folders = function (_PureComponent) {
           {
             className: "folder-content-container",
             style: {
-              width: folderContentWidth ? folderContentWidth : width,
+              maxWidth: folderContentWidth ? folderContentWidth : width,
               height: folderContentHeight ? folderContentHeight : height
             }
           },
