@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,15 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactTabs = require('react-tabs');
+var _reactTabs = require("react-tabs");
 
-require('react-tabs/style/react-tabs.css');
+require("react-tabs/style/react-tabs.css");
 
-require('./Folders.css');
+require("./Folders.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27,80 +27,100 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Folders = function (_PureComponent) {
   _inherits(Folders, _PureComponent);
 
-  function Folders(props) {
+  function Folders() {
     _classCallCheck(this, Folders);
 
-    var _this = _possibleConstructorReturn(this, (Folders.__proto__ || Object.getPrototypeOf(Folders)).call(this, props));
-
-    _this.folders = _this.props.folders;
-    return _this;
+    return _possibleConstructorReturn(this, (Folders.__proto__ || Object.getPrototypeOf(Folders)).apply(this, arguments));
   }
 
   _createClass(Folders, [{
-    key: 'render',
+    key: "render",
     value: function render() {
-      var _this2 = this;
+      var _props = this.props,
+          width = _props.width,
+          height = _props.height,
+          folders = _props.folders,
+          className = _props.className;
 
-      var folderW = this.props.width;
-      var folderHString = this.props.heightString;
-      var tabW = (folderW + (this.props.folders.length - 1) * 10) / this.props.folders.length;
+      var foldersLen = folders.length;
+      var tabW = (width + (foldersLen - 1) * 10) / foldersLen;
       var styles = {
-        tabs: { backgroundColor: 'rgba(0,0,0,0)' },
+        tabs: { backgroundColor: "rgba(0,0,0,0)" },
         tab: function tab(folder, i) {
           return {
             backgroundColor: folder.backgroundColor,
-            color: 'white',
+            color: "white",
             width: tabW,
-            right: i * 10 + 'px',
+            right: i * 10,
             zIndex: 10 - i - 1
           };
         },
         tabPanel: function tabPanel(folder) {
           return {
             backgroundColor: folder.backgroundColor,
-            height: folderHString,
-            overflow: _this2.props.className === 'xray-folder' ? 'auto' : 'hidden'
+            height: height,
+            overflow: className === "xray-folder" ? "auto" : "hidden"
           };
         }
       };
 
-      if (this.folders.length === 1) {
+      if (foldersLen === 1) {
         return _react2.default.createElement(
-          'div',
+          "div",
           {
-            className: this.props.className,
-            style: styles.tabPanel(this.folders[0])
+            className: "wrap",
+            style: {
+              width: width,
+              height: height
+            }
           },
-          this.folders[0].component
+          _react2.default.createElement(
+            "div",
+            {
+              className: className,
+              style: styles.tabPanel(folders[0])
+            },
+            folders[0].component
+          )
         );
       }
 
       return _react2.default.createElement(
-        _reactTabs.Tabs,
-        { className: this.props.className, style: styles.tabs },
+        "div",
+        {
+          className: "wrap",
+          style: {
+            width: width,
+            height: height
+          }
+        },
         _react2.default.createElement(
-          _reactTabs.TabList,
-          null,
-          this.folders.map(function (folder, i) {
+          _reactTabs.Tabs,
+          { className: className, style: styles.tabs },
+          _react2.default.createElement(
+            _reactTabs.TabList,
+            null,
+            folders.map(function (folder, i) {
+              return _react2.default.createElement(
+                _reactTabs.Tab,
+                {
+                  key: folder.name,
+                  style: styles.tab(folder, i),
+                  className: "side-tab tab1"
+                },
+                " ",
+                folder.name
+              );
+            })
+          ),
+          folders.map(function (folder) {
             return _react2.default.createElement(
-              _reactTabs.Tab,
-              {
-                key: folder.name,
-                style: styles.tab(folder, i),
-                className: 'side-tab tab1'
-              },
-              ' ',
-              folder.name
+              _reactTabs.TabPanel,
+              { key: folder.name, style: styles.tabPanel(folder) },
+              folder.component
             );
           })
-        ),
-        this.folders.map(function (folder) {
-          return _react2.default.createElement(
-            _reactTabs.TabPanel,
-            { key: folder.name, style: styles.tabPanel(folder) },
-            folder.component
-          );
-        })
+        )
       );
     }
   }]);

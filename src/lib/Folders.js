@@ -1,77 +1,86 @@
-import React, { PureComponent } from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css'
-import './Folders.css'
+import React, { PureComponent } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import "./Folders.css";
 
 class Folders extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.folders = this.props.folders
-  }
-
-  render () {
-    let folderW = this.props.width
-    let folderHString = this.props.heightString
-    const tabW =
-      (folderW + (this.props.folders.length - 1) * 10) /
-      this.props.folders.length
+  render() {
+    const { width, height, folders, className } = this.props;
+    const foldersLen = folders.length;
+    const tabW = (width + (foldersLen - 1) * 10) / foldersLen;
     const styles = {
-      tabs: { backgroundColor: 'rgba(0,0,0,0)' },
+      tabs: { backgroundColor: "rgba(0,0,0,0)" },
       tab: (folder, i) => {
         return {
           backgroundColor: folder.backgroundColor,
-          color: 'white',
+          color: "white",
           width: tabW,
-          right: i * 10 + 'px',
+          right: i * 10,
           zIndex: 10 - i - 1
-        }
+        };
       },
       tabPanel: folder => {
         return {
           backgroundColor: folder.backgroundColor,
-          height: folderHString,
-          overflow: this.props.className === 'xray-folder' ? 'auto' : 'hidden'
-        }
+          height: height,
+          overflow: className === "xray-folder" ? "auto" : "hidden"
+        };
       }
-    }
+    };
 
-    if (this.folders.length === 1) {
+    if (foldersLen === 1) {
       return (
         <div
-          className={this.props.className}
-          style={styles.tabPanel(this.folders[0])}
+          className="wrap"
+          style={{
+            width: width,
+            height: height
+          }}
         >
-          {this.folders[0].component}
+          <div
+            className={className}
+            style={styles.tabPanel(folders[0])}
+          >
+            {folders[0].component}
+          </div>
         </div>
-      )
+      );
     }
 
     return (
-      <Tabs className={this.props.className} style={styles.tabs}>
-        <TabList>
-          {this.folders.map((folder, i) => {
+      <div
+        className="wrap"
+        style={{
+          width: width,
+          height: height
+        }}
+      >
+        <Tabs className={className} style={styles.tabs}>
+          <TabList>
+            {folders.map((folder, i) => {
+              return (
+                <Tab
+                  key={folder.name}
+                  style={styles.tab(folder, i)}
+                  className="side-tab tab1"
+                >
+                  {" "}
+                  {folder.name}
+                </Tab>
+              );
+            })}
+          </TabList>
+          {folders.map(folder => {
             return (
-              <Tab
-                key={folder.name}
-                style={styles.tab(folder, i)}
-                className='side-tab tab1'
-              >
-                {' '}
-                {folder.name}
-              </Tab>
-            )
+              <TabPanel key={folder.name} style={styles.tabPanel(folder)}>
+                {folder.component}
+              </TabPanel>
+            );
           })}
-        </TabList>
-        {this.folders.map(folder => {
-          return (
-            <TabPanel key={folder.name} style={styles.tabPanel(folder)}>
-              {folder.component}
-            </TabPanel>
-          )
-        })}
-      </Tabs>
-    )
+        </Tabs>
+      </div>
+    );
   }
 }
 
-export default Folders
+export default Folders;
