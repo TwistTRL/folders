@@ -47,7 +47,7 @@ class Folders extends PureComponent {
           <div
             className="folder-content-container"
             style={{
-              width: folderContentWidth ? folderContentWidth : width,
+              maxWidth: folderContentWidth ? folderContentWidth : width,
               height: folderContentHeight ? folderContentHeight : height
             }}
           >
@@ -70,7 +70,7 @@ class Folders extends PureComponent {
         <div
           className="folder-content-container"
           style={{
-            width: folderContentWidth ? folderContentWidth : width,
+            maxWidth: folderContentWidth ? folderContentWidth : width,
             height: folderContentHeight ? folderContentHeight : height
           }}
         >
