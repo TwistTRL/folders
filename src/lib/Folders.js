@@ -22,9 +22,9 @@ class Folders extends PureComponent {
           backgroundColor: folder.backgroundColor,
           color: "white",
           width: tabW,
-          right: i * 10,
-          zIndex: 10 - i - 1
-        };
+          // left: i * 10,
+          zIndex: 10 - foldersLen - i - 1
+        }
       },
       tabPanel: folder => {
         return {
@@ -35,68 +35,52 @@ class Folders extends PureComponent {
       }
     };
 
-    if (foldersLen === 1) {
-      return (
-        <div
-          className="wrap"
-          style={{
-            width: width,
-            height: height
-          }}
-        >
-          <div
-            className="folder-content-container"
-            style={{
-              maxWidth: folderContentWidth ? folderContentWidth : width,
-              height: folderContentHeight ? folderContentHeight : height
-            }}
-          >
-            <div className={className} style={styles.tabPanel(folders[0])}>
-              {folders[0].component}
-            </div>
-          </div>
-        </div>
-      );
-    }
-
     return (
       <div
         className="wrap"
         style={{
-          width: width,
-          height: height
+          maxWidth: folderContentWidth,
+          height: height,
+          direction: 'rtl'
         }}
       >
         <div
           className="folder-content-container"
           style={{
             maxWidth: folderContentWidth ? folderContentWidth : width,
-            height: folderContentHeight ? folderContentHeight : height
+            height: folderContentHeight ? folderContentHeight : height,
+            float: 'right'
           }}
         >
-          <Tabs className={className} style={styles.tabs}>
-            <TabList>
-              {folders.map((folder, i) => {
+          {foldersLen === 1 ? (
+            <div className={className} style={styles.tabPanel(folders[0])}>
+              {folders[0].component}
+            </div>
+          ) : (
+            <Tabs className={className} style={styles.tabs}>
+              <TabList>
+                {folders.map((folder, i) => {
+                  return (
+                    <Tab
+                      key={folder.name}
+                      style={styles.tab(folder, i)}
+                      className="side-tab tab1"
+                    >
+                      {" "}
+                      {folder.name}
+                    </Tab>
+                  );
+                })}
+              </TabList>
+              {folders.map(folder => {
                 return (
-                  <Tab
-                    key={folder.name}
-                    style={styles.tab(folder, i)}
-                    className="side-tab tab1"
-                  >
-                    {" "}
-                    {folder.name}
-                  </Tab>
+                  <TabPanel key={folder.name} style={styles.tabPanel(folder)}>
+                    {folder.component}
+                  </TabPanel>
                 );
               })}
-            </TabList>
-            {folders.map(folder => {
-              return (
-                <TabPanel key={folder.name} style={styles.tabPanel(folder)}>
-                  {folder.component}
-                </TabPanel>
-              );
-            })}
-          </Tabs>
+            </Tabs>
+          )}
         </div>
       </div>
     );

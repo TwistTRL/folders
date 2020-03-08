@@ -58,32 +58,18 @@ class App extends Component {
         name: "COAG",
         backgroundColor: "#fff5e8",
         component: (
-          <>
+          <div className="haha" style={{width: 300}}>
             <div className="fluids-table-label-container">
               <h3>
                 <span className="c-circle">C</span>
                 <span className="coag-label">Coagulation</span>
               </h3>
             </div>
-          </>
+          </div>
         ),
         panelLabel: "Nutrition"
       },
-      {
-        name: "COAG",
-        backgroundColor: "#ffe5e8",
-        component: (
-          <>
-            <div className="fluids-table-label-container">
-              <h3>
-                <span className="c-circle">C</span>
-                <span className="coag-label">Coagulation</span>
-              </h3>
-            </div>
-          </>
-        ),
-        panelLabel: "Nutrition"
-      }
+      
     ];
     return (
       <>
@@ -108,7 +94,7 @@ class App extends Component {
         <Folders
           width={this.state.width}
           height={this.state.height}
-          folderContentWidth={this.state.width}
+          folderContentWidth={1200}
           folderContentHeight={this.state.height}
           className="fluids-folder"
           folders={fluidsFolders}
