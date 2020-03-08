@@ -53,8 +53,8 @@ var Folders = function (_PureComponent) {
             backgroundColor: folder.backgroundColor,
             color: "white",
             width: tabW,
-            right: i * 10,
-            zIndex: 10 - i - 1
+            // left: i * 10,
+            zIndex: 10 - foldersLen - i - 1
           };
         },
         tabPanel: function tabPanel(folder) {
@@ -66,41 +66,14 @@ var Folders = function (_PureComponent) {
         }
       };
 
-      if (foldersLen === 1) {
-        return _react2.default.createElement(
-          "div",
-          {
-            className: "wrap",
-            style: {
-              width: width,
-              height: height
-            }
-          },
-          _react2.default.createElement(
-            "div",
-            {
-              className: "folder-content-container",
-              style: {
-                maxWidth: folderContentWidth ? folderContentWidth : width,
-                height: folderContentHeight ? folderContentHeight : height
-              }
-            },
-            _react2.default.createElement(
-              "div",
-              { className: className, style: styles.tabPanel(folders[0]) },
-              folders[0].component
-            )
-          )
-        );
-      }
-
       return _react2.default.createElement(
         "div",
         {
           className: "wrap",
           style: {
-            width: width,
-            height: height
+            maxWidth: folderContentWidth,
+            height: height,
+            direction: 'rtl'
           }
         },
         _react2.default.createElement(
@@ -109,10 +82,15 @@ var Folders = function (_PureComponent) {
             className: "folder-content-container",
             style: {
               maxWidth: folderContentWidth ? folderContentWidth : width,
-              height: folderContentHeight ? folderContentHeight : height
+              height: folderContentHeight ? folderContentHeight : height,
+              float: 'right'
             }
           },
-          _react2.default.createElement(
+          foldersLen === 1 ? _react2.default.createElement(
+            "div",
+            { className: className, style: styles.tabPanel(folders[0]) },
+            folders[0].component
+          ) : _react2.default.createElement(
             _reactTabs.Tabs,
             { className: className, style: styles.tabs },
             _react2.default.createElement(
