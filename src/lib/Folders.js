@@ -24,7 +24,7 @@ class Folders extends PureComponent {
           width: tabW,
           // left: i * 10,
           zIndex: 10 - foldersLen - i - 1
-        }
+        };
       },
       tabPanel: folder => {
         return {
@@ -41,7 +41,7 @@ class Folders extends PureComponent {
         style={{
           maxWidth: folderContentWidth,
           height: height,
-          direction: 'rtl'
+          direction: "rtl"
         }}
       >
         <div
@@ -49,7 +49,7 @@ class Folders extends PureComponent {
           style={{
             maxWidth: folderContentWidth ? folderContentWidth : width,
             height: folderContentHeight ? folderContentHeight : height,
-            float: 'right'
+            float: "right"
           }}
         >
           {foldersLen === 1 ? (
@@ -58,20 +58,22 @@ class Folders extends PureComponent {
             </div>
           ) : (
             <Tabs className={className} style={styles.tabs}>
-              <TabList>
-                {folders.map((folder, i) => {
-                  return (
-                    <Tab
-                      key={folder.name}
-                      style={styles.tab(folder, i)}
-                      className="side-tab tab1"
-                    >
-                      {" "}
-                      {folder.name}
-                    </Tab>
-                  );
-                })}
-              </TabList>
+              <div style={{ width: width }}>
+                <TabList>
+                  {folders.map((folder, i) => {
+                    return (
+                      <Tab
+                        key={folder.name}
+                        style={styles.tab(folder, i)}
+                        className="side-tab tab1"
+                      >
+                        {" "}
+                        {folder.name}
+                      </Tab>
+                    );
+                  })}
+                </TabList>
+              </div>
               {folders.map(folder => {
                 return (
                   <TabPanel key={folder.name} style={styles.tabPanel(folder)}>
