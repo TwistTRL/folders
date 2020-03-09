@@ -58,22 +58,21 @@ class Folders extends PureComponent {
             </div>
           ) : (
             <Tabs className={className} style={styles.tabs}>
-              <div style={{ width: width }}>
-                <TabList>
-                  {folders.map((folder, i) => {
-                    return (
-                      <Tab
-                        key={folder.name}
-                        style={styles.tab(folder, i)}
-                        className="side-tab tab1"
-                      >
-                        {" "}
-                        {folder.name}
-                      </Tab>
-                    );
-                  })}
-                </TabList>
-              </div>
+              <TabList>
+                {folders.map((folder, i) => {
+                  return (
+                    <Tab
+                      key={folder.name}
+                      style={styles.tab(folder, i)}
+                      className="side-tab tab1"
+                    >
+                      {" "}
+                      {folder.name}
+                    </Tab>
+                  );
+                })}
+              </TabList>
+
               {folders.map(folder => {
                 return (
                   <TabPanel key={folder.name} style={styles.tabPanel(folder)}>

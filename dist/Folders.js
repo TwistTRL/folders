@@ -94,24 +94,20 @@ var Folders = function (_PureComponent) {
             _reactTabs.Tabs,
             { className: className, style: styles.tabs },
             _react2.default.createElement(
-              "div",
-              { style: { width: width } },
-              _react2.default.createElement(
-                _reactTabs.TabList,
-                null,
-                folders.map(function (folder, i) {
-                  return _react2.default.createElement(
-                    _reactTabs.Tab,
-                    {
-                      key: folder.name,
-                      style: styles.tab(folder, i),
-                      className: "side-tab tab1"
-                    },
-                    " ",
-                    folder.name
-                  );
-                })
-              )
+              _reactTabs.TabList,
+              null,
+              folders.map(function (folder, i) {
+                return _react2.default.createElement(
+                  _reactTabs.Tab,
+                  {
+                    key: folder.name,
+                    style: styles.tab(folder, i),
+                    className: "side-tab tab1"
+                  },
+                  " ",
+                  folder.name
+                );
+              })
             ),
             folders.map(function (folder) {
               return _react2.default.createElement(
