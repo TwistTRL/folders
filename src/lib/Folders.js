@@ -14,7 +14,7 @@ class Folders extends PureComponent {
       folderContentHeight
     } = this.props;
     const foldersLen = folders.length;
-    const tabW = (width + (foldersLen - 1) * 10) / foldersLen;
+    const tabW = width / foldersLen;
     const styles = {
       tabs: { backgroundColor: "rgba(0,0,0,0)" },
       tab: (folder, i) => {

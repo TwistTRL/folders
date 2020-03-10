@@ -69,6 +69,66 @@ class App extends Component {
         ),
         panelLabel: "Nutrition"
       },
+      {
+        name: "COAG",
+        backgroundColor: "#fff5e8",
+        component: (
+          <div className="haha" style={{width: 300}}>
+            <div className="fluids-table-label-container">
+              <h3>
+                <span className="c-circle">C</span>
+                <span className="coag-label">Coagulation</span>
+              </h3>
+            </div>
+          </div>
+        ),
+        panelLabel: "Nutrition"
+      },
+      {
+        name: "COAG",
+        backgroundColor: "#fff5e8",
+        component: (
+          <div className="haha" style={{width: 300}}>
+            <div className="fluids-table-label-container">
+              <h3>
+                <span className="c-circle">C</span>
+                <span className="coag-label">Coagulation</span>
+              </h3>
+            </div>
+          </div>
+        ),
+        panelLabel: "Nutrition"
+      },
+      {
+        name: "COAG",
+        backgroundColor: "#fff5e8",
+        component: (
+          <div className="haha" style={{width: 300}}>
+            <div className="fluids-table-label-container">
+              <h3>
+                <span className="c-circle">C</span>
+                <span className="coag-label">Coagulation</span>
+              </h3>
+            </div>
+          </div>
+        ),
+        panelLabel: "Nutrition"
+      },
+      {
+        name: "COAG",
+        backgroundColor: "#fff5e8",
+        component: (
+          <div className="haha" style={{width: 300}}>
+            <div className="fluids-table-label-container">
+              <h3>
+                <span className="c-circle">C</span>
+                <span className="coag-label">Coagulation</span>
+              </h3>
+            </div>
+          </div>
+        ),
+        panelLabel: "Nutrition"
+      },
       
     ];
     return (
