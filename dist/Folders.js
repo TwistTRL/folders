@@ -45,7 +45,7 @@ var Folders = function (_PureComponent) {
           folderContentHeight = _props.folderContentHeight;
 
       var foldersLen = folders.length;
-      var tabW = (width + (foldersLen - 1) * 10) / foldersLen;
+      var tabW = width / foldersLen;
       var styles = {
         tabs: { backgroundColor: "rgba(0,0,0,0)" },
         tab: function tab(folder, i) {
